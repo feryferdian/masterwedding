@@ -1,0 +1,28 @@
+<script>$(document).ready(function () {
+$(".loan-input").on("keyup", null, function () {
+var $input = $(this),
+value = $input.val(),
+num = parseFloat(value).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+
+$input.siblings('.add-on').text('$' + num);
+});
+});
+</script>
+<div class="control-group">
+    <label class="control-label">Loan Amount 1</label>
+    <div class="controls">
+        <div class="input-append">
+            <input class="span2" id="loanAmount1" type="text">
+            <span class="add-on" id="loanAmount1Cur">$</span>
+        </div>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">Loan Amount 2</label>
+    <div class="controls">
+        <div class="input-append">
+            <input class="span2" name="loanAmount2" type="text">
+            <span class="add-on" name="LoanAmount2Cur">$</span>
+        </div>
+    </div>
+</div>
